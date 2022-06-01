@@ -1,7 +1,7 @@
 amount = 1000
 
 print("------------------------------------")
-print(" --------- DERINDERE BANK --------- ")
+print(" --------- XXXXXXXXX BANK --------- ")
 print("------------------------------------")
 
 print("Hoşgeldiniz ->")
