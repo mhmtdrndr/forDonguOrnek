@@ -20,4 +20,5 @@ def rakamlariTopla(number):
 factoriyelNumber = int(input("Faktroyeli hesaplanacak olan sayı : "))
 
 basamakToplam = factoriyelAl(factoriyelNumber)
-print(rakamlariTopla(basamakToplam))
+print(f'''{factoriyelNumber} sayısının faktoriyeli : {factoriyelAl(factoriyelNumber)} ve
+faktoriyel sonucu çıkan sayının rakamları toplamı : {rakamlariTopla(basamakToplam)}''')
