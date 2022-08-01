@@ -12,5 +12,5 @@ while len(primeNumberList) < 10001:
         primeNumberList.append(value)
     value += 1
     
-print(primeNumberList)
+#print(primeNumberList)
 print(primeNumberList[-1])
