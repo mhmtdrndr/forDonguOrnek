@@ -1,0 +1,66 @@
+account = ["Fionel Kessi", "Ankara", 1000]
+
+def menu():
+    baslik = "\nabc bankası\n"
+    menu = [
+        "[ 1 ] [ bakiye sorgulama ....... > ]",
+        "[ 2 ] [ para yatır ............. > ]",
+        "[ 3 ] [ para çek ............... > ]",
+        "[ 4 ] [ para trasferi .......... > ]",
+        "[ 5 ] [ bilgileri göster ....... > ]",
+        "[ 0 ] [ çıkış .................. > ]"
+    ]
+    print(baslik.upper())
+    while True:
+        for i in range(len(menu)):
+            print(menu[i].title())
+        deger = int(input("\n[ Lütfen yapmak istediğiniz işlemi seçiniz ]\n"))
+        if(deger == 0):
+            print( "[ İyi Günler... Çıkış Yapıldı... ]" )
+            break
+        elif(deger == 1):
+            bakiyeSorgula()
+        elif(deger == 2):
+            paraYatir()
+        elif(deger == 3):
+            paraCek()
+        elif(deger == 4):
+            bakiyeTransfer()
+        elif(deger == 5):
+            hesapBilgileriGoster()
+        else:
+            print("!!! -- Hatalı seçim -- !!!")
+
+def baslik(mesaj):
+    print(mesaj.title())
+
+def bakiyeSorgula():
+    baslik("bakiye sorgulama ekranı")
+    print(f"Hesabınızda {account[2]} TL bulunmaktadır.")
+
+def paraYatir():
+    baslik("hesaba para ekleme ekranı")
+    para = int(input("Yatırılacak para miktarını giriniz : "))
+    yeniBakiye = account[2] + para
+    account[2] = yeniBakiye
+    print(f"Para yatırma işlemi başarılı... Yeni bakiyeniz : {account[2]}")
+
+def paraCek():
+    baslik("hesaptan para çekme ekranı")
+    cekilenPara = int(input("Ne kadar para çekmek istiyorsunuz : "))
+    if(account[2] < cekilenPara and account[2] == 0):
+        print("hesabınızda yeterli bakiye yok")
+    else:
+        yeniBakiye = account[2] - cekilenPara
+        account[2] = yeniBakiye
+        print(f"Para çekme işlemi başarılı... Yeni bakiyeniz : {account[2]}")
+
+def bakiyeTransfer():
+    pass
+
+def hesapBilgileriGoster():
+    baslik("hesap bilgileri ekranı")
+    for x in range(len(account)):
+        print(account[x])
+
+menu()
